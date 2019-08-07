@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
+# Bottle - for exercise
 class Bottles
-  def initialize
-  end
+  def initialize; end
 
   def song
     verses(99, 0)
   end
 
   def verses(first, last)
-    result = ""
+    result = ''
     idx = first
 
     while idx >= last
@@ -19,10 +21,10 @@ class Bottles
   end
 
   def verse(count)
-    <<-poet
-#{capital_bottle(count)} of beer on the wall, #{bottle(count)} of beer.
-#{take(count)}, #{remain_bottle(count)} of beer on the wall.
-     poet
+    <<~POET
+      #{capital_bottle(count)} of beer on the wall, #{bottle(count)} of beer.
+      #{take(count)}, #{remain_bottle(count)} of beer on the wall.
+    POET
   end
 
   def capital_bottle(count)
@@ -31,20 +33,20 @@ class Bottles
 
   def bottle(count)
     return "#{count} bottles" if count > 1
-    return "1 bottle" if count == 1
+    return '1 bottle' if count == 1
 
-    "no more bottles"
+    'no more bottles'
   end
 
   def take(count)
-    return "Take one down and pass it around" if count > 1
-    return "Take it down and pass it around" if count == 1
+    return 'Take one down and pass it around' if count > 1
+    return 'Take it down and pass it around' if count == 1
 
-    "Go to the store and buy some more"
+    'Go to the store and buy some more'
   end
 
   def remain_bottle(count)
-    return "99 bottles" if count.zero?
+    return '99 bottles' if count.zero?
 
     bottle(count - 1)
   end
