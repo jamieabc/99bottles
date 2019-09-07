@@ -9,7 +9,7 @@ class Bottles
   end
 
   def verses(first, last)
-    result = ''
+    result = +''
     idx = first
 
     while idx >= last
