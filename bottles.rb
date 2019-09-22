@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 class Bottles
+  def verses(start, finish)
+    return '' if start < finish || start.negative?
+
+    start.downto(finish).map { |number| verse(number) }.join("\n")
+  end
+
+  private
+
   def verse(number)
     case number
     when 0
@@ -25,5 +33,4 @@ class Bottles
       "#{number - 1} bottles of beer on the wall.\n"
     end
   end
-
 end
