@@ -2,8 +2,6 @@
 
 class Bottles
   def verses(start, finish)
-    return '' if start < finish || start.negative?
-
     start.downto(finish).map { |number| verse(number) }.join("\n")
   end
 
