@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Bottles
+  def song
+    verses(99, 0)
+  end
+
   def verses(start, finish)
     start.downto(finish).map { |number| verse(number) }.join("\n")
   end
