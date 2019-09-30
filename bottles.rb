@@ -12,27 +12,36 @@ class Bottles
   private
 
   def verse(number)
-    case number
-    when 0
-      "No more bottles of beer on the wall, " \
-      "no more bottles of beer.\n" \
-      "Go to the store and buy some more, " \
-      "99 bottles of beer on the wall.\n"
-    when 1
-      "1 bottle of beer on the wall, " \
-      "1 bottle of beer.\n" \
-      "Take it down and pass it around, " \
-      "no more bottles of beer on the wall.\n"
-    when 2
-      "2 bottles of beer on the wall, " \
-      "2 bottles of beer.\n" \
-      "Take one down and pass it around, " \
-      "1 bottle of beer on the wall.\n"
-    else
-      "#{number} bottles of beer on the wall, " \
-      "#{number} bottles of beer.\n" \
-      "Take one down and pass it around, " \
-      "#{number - 1} bottles of beer on the wall.\n"
-    end
+    str = case number
+          when 0
+            "No more bottles of beer on the wall, " \
+            "no more bottles of beer.\n" \
+            "Go to the store and buy some more, " \
+            "99 bottles of beer on the wall.\n"
+          when 1
+            "1 bottle of beer on the wall, " \
+            "1 bottle of beer.\n" \
+            "Take it down and pass it around, " \
+            "no more bottles of beer on the wall.\n"
+          when 2
+            "2 bottles of beer on the wall, " \
+            "2 bottles of beer.\n" \
+            "Take one down and pass it around, " \
+            "1 bottle of beer on the wall.\n"
+          else
+            "#{number} bottles of beer on the wall, " \
+            "#{number} bottles of beer.\n" \
+            "Take one down and pass it around, " \
+            "#{number - 1} bottles of beer on the wall.\n"
+          end
+
+    str
   end
+# use class for each bottle, default to most general
+# for 0, 1, 2, 6, and 7, with special returns
+# is this a good abstraction? I think naturally it's same as case, just use object
+# to encaspulate changes
+#
+# use string substitution for all words, 6 bottles => 1 six-pack
+
 end
